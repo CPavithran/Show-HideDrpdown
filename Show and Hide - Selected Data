@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show/Hide div when select dropdown option</title>
+
+
+
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+        body{
+            font-family: 'Poppins',sans-serif;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 70px 0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .menu,
+        .content{
+            width: 100%;
+        }
+        select{
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Poppins',sans-serif;
+            border: none;
+            border-radius: 8px;
+            border: 2px solid #3f51b5;
+            box-shadow: 0 15px 15px #efefef;
+        }
+
+        .content{
+            margin: 30px 0;
+        }
+        .content .data{
+            padding: 25px;
+            background-color: #fff;
+            border: 2px solid #8bc34a;
+            border-radius: 8px;
+        }
+        .content p{
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid gainsboro;
+        }
+        .content p:last-child{
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .content p b{
+            font-weight: 700;
+        }
+        .content p span{
+            float: right;
+            font-weight: normal;
+        }
+        .data{
+            display: none;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="wrapper">
+        <div class="menu">
+         <select id="name">
+            <option value="nia">Nia Matos</option>
+            <option value="anita">Anita Cruz</option>
+            <option value="reina">Reina Brooks</option>
+            <option value="aliah">Aliah Pitts</option>
+         </select>   
+        </div>
+
+
+<div class="content">
+    <div id = "nia" class="data">
+        <p><b>Full Name</b><span>Nia Matos</span></p>
+        <p><b>Email</b><span>nia.matos@gmail.com</span></p>
+        <p><b>Balance</b><span>30000</span></p>
+    </div>
+    <div id = "anita" class="data">
+        <p><b>Full Name</b><span>Anita Cruz</span></p>
+        <p><b>Email</b><span>anita.cruz@gmail.com</span></p>
+        <p><b>Balance</b><span>45000</span></p>
+    </div>
+    <div id = "reina" class="data">
+        <p><b>Full Name</b><span>Reina Brooks</span></p>
+        <p><b>Email</b><span>reina.brooks@gmail.com</span></p>
+        <p><b>Balance</b><span>2000</span></p>
+    </div>
+    <div id = "aliah" class="data">
+        <p><b>Full Name</b><span>Aliah Pitts</span></p>
+        <p><b>Email</b><span>aliah.pitts@gmail.com</span></p>
+        <p><b>Balance</b><span>60500</span></p>
+    </div>
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $("#name").on('change', function(){
+            $(".data").hide();
+            $("#" + $(this).val()).fadeIn(700);
+        });
+    });
+
+</script>
+
+</body>
+</html>
